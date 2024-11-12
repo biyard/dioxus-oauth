@@ -1,0 +1,24 @@
+[package]
+name = "dioxus-oauth"
+version = "0.1.0"
+edition = "2021"
+description = "Library for using OAuth in dioxus"
+license = "MIT"
+keywords = ["dioxus", "web", "oauth", "popup"]
+repository = "https://github.com/biyard/dioxus-oauth.git"
+
+[dependencies]
+dioxus = { version = "0.6.0-alpha.4", features = [] }
+reqwest = { version = "0.12.5", features = ["blocking", "json"] }
+url = { version = "2.5.2" }
+tracing = "0.1.40"
+serde = "1.0.204"
+
+web-sys = { version = "0.3.72", optional = true }
+wasm-bindgen = { version = "0.2.95", optional = true }
+wasm-bindgen-futures = { version = "0.4.43", optional = true }
+
+
+[features]
+server = [ "dioxus/server" ]
+web = [ "dioxus/web", "web-sys", "wasm-bindgen", "wasm-bindgen-futures" ]
