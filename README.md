@@ -83,5 +83,5 @@ pub fn OAuthLoginPage() -> Element {
            }
        }
     }
-
+}
 ```
