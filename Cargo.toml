@@ -1,6 +1,6 @@
 [package]
 name = "dioxus-oauth"
-version = "0.1.2"
+version = "0.6.0"
 edition = "2021"
 description = "Library for using OAuth in dioxus"
 license = "MIT"
@@ -8,7 +8,7 @@ keywords = ["dioxus", "web", "oauth", "popup"]
 repository = "https://github.com/biyard/dioxus-oauth.git"
 
 [dependencies]
-dioxus = { version = "0.6.0-rc.0", features = [] }
+dioxus = { version = "0.6.0", features = [] }
 reqwest = { version = "0.12.5", features = ["blocking", "json"] }
 url = { version = "2.5.2" }
 tracing = "0.1.40"
