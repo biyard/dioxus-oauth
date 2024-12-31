@@ -37,17 +37,15 @@ impl FirebaseService {
         app_id: &str,
         measurement_id: &str,
     ) {
-        let auth = unsafe {
-            initialize_app(
-                api_key,
-                auth_domain,
-                project_id,
-                storage_bucket,
-                messaging_sender_id,
-                app_id,
-                measurement_id,
-            )
-        };
+        initialize_app(
+            api_key,
+            auth_domain,
+            project_id,
+            storage_bucket,
+            messaging_sender_id,
+            app_id,
+            measurement_id,
+        );
 
         let srv = Self {};
 
@@ -56,8 +54,6 @@ impl FirebaseService {
 
     #[cfg(feature = "web")]
     pub async fn sign_in_with_popup(&self, scopes: Vec<String>) -> Credential {
-        let auth = (self.auth)();
-
         let cred: Credential = match sign_in_with_popup(scopes).await {
             Ok(v) => {
                 let c = v.as_string().unwrap_or_default();
